@@ -98,3 +98,27 @@ function showNumbersTimeOut (start, end, interval) {
 //showNumbersInterval(5, 10, 500);
 
 //showNumbersTimeOut(5, 10, 500);
+
+
+/*
+4) Какой результат выполнения будет у данного кода? Объяснить почему.
+
+function addBase(base) {
+  return function (num) {
+    return base + num;
+  };
+}
+let addOne = addBase(1);
+alert(addOne(5) + addOne(3));
+
+*/
+//Описание кода
+/*
+В данном примере мы используем замыкание
+
+При обьявлении let addOne = addBase(1) в переменной addOne мы имеем функцию с указанным параметром base
+и эта фукция ожидает от нас следующий параметр. при выполнении функции addOne мы возвращаем значение переданое в фукцию +1
+
+Когда мы выполним все в алерте то мы получим (addOne(5) = 6) + (addOne(3) = 4) и алерт выведет число 10.
+
+*/
