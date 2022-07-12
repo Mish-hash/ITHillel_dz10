@@ -67,3 +67,34 @@ const user2 = {
 const hello = concatStr.bind(user2);
 
 console.log(hello());
+
+
+/*
+3) Напишите функцию showNumbers(), которая последовательно выводит в консоль числа
+в заданном диапазоне, с заданным интервалом (все данные должны передаваться как параметры функции).
+
+tips: для реализации используйте функцию setInterval()
+
+showNumbers(5, 10, 500); // 5 6 7 8 9 10
+
+upd: Решите эту задачу с использованием рекурсивного setTimeout().
+*/
+
+function showNumbersInterval (start, end, interval) {
+    const idInt = setInterval(()=>{
+        start > end ? clearInterval(idInt) : console.log(start++);
+    }, interval);
+};
+
+function showNumbersTimeOut (start, end, interval) {
+    setTimeout(function timeRun () {
+        if (start <= end) {
+            console.log(start++);
+            setTimeout(timeRun, interval);
+        }
+    }, interval);
+};
+
+//showNumbersInterval(5, 10, 500);
+
+//showNumbersTimeOut(5, 10, 500);
