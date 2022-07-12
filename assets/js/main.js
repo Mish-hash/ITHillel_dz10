@@ -37,3 +37,33 @@ coffeeMachine.start = coffeeMachine.start.bind(teaPlease);
 
 coffeeMachine.start();
 
+
+/*
+2) Напишите функцию concatStr(), которая соединяет две строки,
+разделенные каким-то символом: разделитель и строки передаются в параметрах функции.
+Используя привязку аргументов с помощью bind, создайте новую функцию hello(),
+которая которая выводит приветствие тому, кто передан в ее параметре:
+
+let checkConcat = concatStr('Hello', ' ', 'Matt'); // 'Hello Matt'
+...
+let finalResult = hello('Matt') // 'Hello Matt'
+let finalResult = hello('John') // 'Hello John'
+*/
+
+function concatStr (great = 'Hello', separator = ' ', name = this.name) {
+    return great + separator + name
+};
+
+let checkConcat = concatStr('Hello', ' ', 'Matt');
+
+const user1 = {
+    name: 'Matt',
+};
+
+const user2 = {
+    name: 'John',
+};
+
+const hello = concatStr.bind(user2);
+
+console.log(hello());
